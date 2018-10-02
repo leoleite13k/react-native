@@ -1,0 +1,10 @@
+Comando no git
+
+git config --global user.name "Leonardo Leite"
+git config --global user.email "leonardotleite13k@gmail.com"
+git config --global core.editor sub
+git config user.email
+git config --list
+
+git init - Inicializa o repositório
+git status - Verifica o que foi modificado

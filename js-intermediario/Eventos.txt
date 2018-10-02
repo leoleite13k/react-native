@@ -1,0 +1,28 @@
+Eventos de Mouse
+onmousedown   - Quando apertar com o mouse
+onmouseup     - Quando soltar o click do mouse
+onmouseover   - Quando passa o mouse por cima do botão
+onmouseout    - Quando o mouse sai decima do botão
+onmousemove   - Quando o mouse move 1 px emcima do elemento
+onclick       - Quando clica no elemento
+oncontextmenu - Quando clica com o botão direito
+ondblclick    - Quando clica 2 vezes 
+
+Eventos de Teclado
+onkeydown      - Quando aperta a tecla
+event.keyCode  - Pega a tecla que apertou passando por parametro na função
+onkeyup        - Quando solta a tecla
+onkeypress     - Quando e segurado o botão
+event.shiftKey - Para qunado o shift esta apertado ou foi apertado (Retorna um boolean)
+event.altKey   - Quando preciona o Alt
+event.ctrlKey  - Quando Presciona o control
+event.metaKey  - No caso do mac
+
+Eventos de pagina
+onload   - Quando inicia a pagina (geralmente colocado no body)
+onunload - Quando fechar a pagina
+
+Eventos de formulário
+onchange  - Ao mudar a opção do elemento
+onfocus   - Quando o elemento estiver focado
+onsubmit  - Qunado o formulario for enviado

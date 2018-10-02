@@ -1,0 +1,30 @@
+Comandos importantantes
+
+var      - Definindo variavies
+alert()  - Envia mensagem de alerta
+//       - Comenta linhas
+/*       - Comenta diversas linhas 
+prompt() - Pega o valor e defini na variavel na janela e retorna como texto, se nada for digitado ele vem null
+document - Aletra na pagina HTML
+window.  - Altera a janela do navegador
+
+Ex:
+document.write() - Escreve na pagina em html, dentro dele posso digitar qualquer coisa que sera adicionada no HTML da pagina (texto, imagem...)
+
+window.location.href = 'teste.html'" - Encaminha para uma outra pagina
+
+document.getElementById() - Pega o elemento pelo id dele, .value pega seu valor
+
+Usando arrays
+var lista = ["elemento1", "elemento2", 30]
+
+Buscando - lista.IndexOf("elemento1"), retornará o index, se retornar -1 é que nao achou
+
+Transformando em String - lista.join("Delimitador") o delimitador vai determinar o que separará os elementos
+
+Remover itens do array
+lista.pop() - Remove o ultimo item
+lista.shift() - Remove o primeiro item do array
+
+Adcionar itens no array
+lista.push("elemento")
