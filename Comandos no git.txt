@@ -16,3 +16,5 @@ git log                  - Ve os commites dados neste branch
 git branch               - Mostra os branch e com * e qual estamos usando
 git reset -soft          - Volta o commit mais nao apaga o que foi feito
 git reset -hard          - Volta o commit e apaga tudo que foi feito
+
+Alteração no master
