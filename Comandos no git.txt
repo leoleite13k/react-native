@@ -8,3 +8,6 @@ git config --list
 
 git init - Inicializa o repositório
 git status - Verifica o que foi modificado
+git add -A  - Adiciona os arquivos para serem comitados
+git commit -m "Mensagem" - Commita no git
+git log    - Ve os commites dados neste branch
