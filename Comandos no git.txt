@@ -24,3 +24,5 @@ git diff                   - Mostra as alterações feitas
 git diff --name-only       - Mostra somente o nome dos arquivos alterados
 git checkout HEAD -- nomedoarquivo - Volta para a versao anterior somente o arquivo definido
 git merge branch           - Dar esse comando no master para dar um merge nos arquivos com a branch que quiser
+git branch -d nomebranch   - Remove a branch
+git push                   - Envia para o repo remoto
