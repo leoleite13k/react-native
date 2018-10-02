@@ -1,13 +1,18 @@
 Comando no git
 
+Configurando
 git config --global user.name "Leonardo Leite"
 git config --global user.email "leonardotleite13k@gmail.com"
 git config --global core.editor sub
 git config user.email
 git config --list
 
-git init - Inicializa o repositório
-git status - Verifica o que foi modificado
-git add -A  - Adiciona os arquivos para serem comitados
+Usando o GIT
+git init                 - Inicializa o repositório
+git status               - Verifica o que foi modificado
+git add -A               - Adiciona os arquivos para serem comitados
 git commit -m "Mensagem" - Commita no git
-git log    - Ve os commites dados neste branch
+git log                  - Ve os commites dados neste branch
+git branch               - Mostra os branch e com * e qual estamos usando
+git reset -soft          - Volta o commit mais nao apaga o que foi feito
+git reset -hard          - Volta o commit e apaga tudo que foi feito
