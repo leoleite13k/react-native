@@ -14,7 +14,13 @@ git add -A               - Adiciona os arquivos para serem comitados
 git commit -m "Mensagem" - Commita no git
 git log                  - Ve os commites dados neste branch
 git branch               - Mostra os branch e com * e qual estamos usando
-git reset -soft          - Volta o commit mais nao apaga o que foi feito
-git reset -hard          - Volta o commit e apaga tudo que foi feito
-
-Alteração no master
+git reset -soft           - Volta o commit mais nao apaga o que foi feito
+git reset -hard           - Volta o commit e apaga tudo que foi feito
+git commit -am "Mens"     - Commita e ja adiona no git
+git branch nomedobranch-b - Cria o novo branch e ja muda a branch
+git checkout nomedobranch - Entra no branch
+git branch -D nomedobranch - Deleta uma branch
+git diff                   - Mostra as alterações feitas
+git diff --name-only       - Mostra somente o nome dos arquivos alterados
+git checkout HEAD -- nomedoarquivo - Volta para a versao anterior somente o arquivo definido
+git merge branch           - Dar esse comando no master para dar um merge nos arquivos com a branch que quiser
