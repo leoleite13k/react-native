@@ -27,3 +27,4 @@ git merge branch           - Dar esse comando no master para dar um merge nos ar
 git branch -d nomebranch   - Remove a branch
 git push                   - Envia para o repo remoto
 git revert --no-edit numerodocommitfeito - Reverte o codigo no commit a onde tava no master e na branch volta as alterações 
+git push oring :nomebranch - deleta o branch remoto no GitHub
