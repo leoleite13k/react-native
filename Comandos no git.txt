@@ -28,4 +28,5 @@ git branch -d nomebranch   - Remove a branch
 git push                   - Envia para o repo remoto
 git revert --no-edit numerodocommitfeito - Reverte o codigo no commit a onde tava no master e na branch volta as alterações 
 git push origin :nomebranch - deleta o branch remoto no GitHub
-git pull origin master     - Pega do repo remoto e tras para o local (atualiza)
+git pull origin master      - Pega do repo remoto e tras para o local (atualiza)
+git clone urldoprojeto      - Clona o projeto para seu local
