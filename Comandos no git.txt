@@ -30,3 +30,9 @@ git revert --no-edit numerodocommitfeito - Reverte o codigo no commit a onde tav
 git push origin :nomebranch - deleta o branch remoto no GitHub
 git pull origin master      - Pega do repo remoto e tras para o local (atualiza)
 git clone urldoprojeto      - Clona o projeto para seu local
+
+Para contribuir com outros projeto
+vai no projeto que deseja , da um FORK
+depois da um git clone no seu repo e cria um local
+da um push no seu projeto
+vai no Git HUb e da um pull request
