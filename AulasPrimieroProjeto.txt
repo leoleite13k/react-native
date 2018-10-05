@@ -1,0 +1,141 @@
+Aulas anteriores
+
+Criando o proprio Componente e importando os do React
+
+import React, { Component } from 'react';
+import { View, Text, StyleSheet, Button, Image } from 'react-native';
+
+
+class Imagem extends Component {
+  render() {
+
+    let imagem = {
+      uri:'https://abrilsuperinteressante.files.wordpress.com/2018/07/'+this.props.nome+'.jpeg'
+    };
+
+    return(
+      <Image source={imagem} style={{width:parseInt(this.props.altura), height:parseInt(this.props.largura)}} />
+    );
+  }
+}
+
+Criando componente e usando State
+
+class Jantar extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {comida:props.comida};
+
+    var comidas = ['Pizza', 'Burger', 'Arroz', 'Macarrão', 'Alface', 'Cenoura'];
+
+    setInterval(()=>{
+
+      this.setState(previousState => {
+        var n = Math.floor(Math.random() * comidas.length);
+
+        return { comida: comidas[n] };
+      });
+
+    },1000);
+
+  }
+
+  render() {
+    return(
+      <View>
+        <Text style={{textAlign:'center', fontSize:20, fontWeight:'bold', color:'red'}}>O que você vai comer hoje : </Text>
+        <Text style={{textAlign:'center', fontSize:20, fontWeight:'bold'}}>{this.state.comida}</Text>
+      </View>
+
+      );
+  }
+}
+
+Classe principal
+export default class PrimeiroProjeto extends Component {
+  //Função 
+  somar(n1,n2) {
+    return n1+n2;
+  }
+
+  //Função anonima
+  (parametros) => {o que vai fazer}
+
+
+  render() {
+    
+    // Usar o let para criar variaveis locais e var para todo o projeto
+    let nome = "Leonardo";
+
+
+    return(
+      <View style={{paddingTop:20}>
+        <Text style={ styles.texto }>A soma de 2 + 2 é : {this.somar(2,2)}</Text>
+        <Text style={ styles.texto2 }>Olá Mundo !</Text>
+
+        <Button  title="Aperte Aqui" onPress={ () => { alert("Apertou !!!") }}/>
+
+        <Imagem nome='565dcdfe0e2163330400bf82albert-einstein-2071-hd-wallpapers' largura = '200' altura = '200' />
+
+        Usando Component Jantar e passando por parametro o Inicio dela
+        <Jantar comida = 'Biscoito'/>
+
+      </View> 
+    );
+  }
+}
+
+Usando Styles
+const styles = StyleSheet.create({
+  texto:{
+    fontSize:30,
+    color: 'black',
+    margin: 30,
+    textAlign: 'center'
+  },
+  texto2:{
+    fontSize: 25, 
+    color: 'red', 
+    margin: 20,
+    textAlign: 'center'
+  }
+})
+
+Aprendo a colocar estilos
+
+ <Text style={styles.azulGrande}>Este é o texto 1 </Text>
+<Text style={styles.vermelho}>Este é o texto 2 </Text>
+<Text style={[styles.azulGrande, styles.vermelho]}>Este é o texto 3 </Text>
+<Text style={[styles.vermelho, styles.azulGrande]}>Este é o texto 4 </Text>
+
+styles = StyleSheet.create({
+  padrao: {
+    paddingTop: 20,
+    backgroundColor: 'gray'
+  },
+  azulGrande: {
+    fontSize: 30,
+    color: '#0000FF',
+    textAlign: 'center'
+  },
+  vermelho: {
+    fontSize: 15,
+    color: '#FF0000'
+  }
+
+  Aula sobre flex
+
+<View style= {{flex:1, backgroundColor:'black'}}>
+  <View style={{height:20, backgroundColor:'lightblue'}}></View>
+  <View style={{flex:1, backgroundColor:'darkgray'}}></View>
+  <View style={{flex:2, backgroundColor:'lightgray'}}></View>
+  <View style={{flex:3, backgroundColor:'lightgreen'}}></View>
+  <View style={{height:10, backgroundColor:'lightblue'}}></View>
+</View> 
+
+
+
+
+
+
