@@ -135,7 +135,13 @@ styles = StyleSheet.create({
 </View> 
 
 
-
+Flex-Box
+  <View style= {{flex:1, flexDirection:'row', alignContent:'space-between'}}>
+    <View style={{flex:1, alignItems:'flex-start', backgroundColor:'lightblue'}}></View>
+    <View style={{flex:1, alignItems:'center', backgroundColor:'darkblue'}}></View>
+    <View style={{flex:1, alignItems:'stretch', backgroundColor:'blue'}}></View>
+    <View style={{flex:1, alignItems:'flex-end', backgroundColor:'lightblue'}}></View>
+  </View>
 
 
 
