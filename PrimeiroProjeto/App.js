@@ -1,109 +1,85 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button, TextInput, Image } from 'react-native';
+import { View, Text, StyleSheet, Button, TextInput, Image, TouchableOpacity } from 'react-native';
+
+class Botao extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {};
+		this.styles = StyleSheet.create({
+			botao:{
+				width:250,
+				height:50,
+				borderWidth:1,
+				borderColor:props.color,
+				backgroundColor:'transparent',
+				borderRadius: 25,
+			},
+			botaoArea:{
+				flex:1,
+				flexDirection: 'row',
+				justifyContent:'center',
+				alignItems:'center'
+			},
+			botaoText:{
+				color:props.color,
+				fontSize:14,
+				fontWeight:'bold'
+			}
+		});
+	}
+
+	render() {
+		return(
+			<TouchableOpacity style={this.styles.botao} onPress={this.props.onPress}>
+				<View style={this.styles.botaoArea}>
+					<Text style={this.styles.botaoText}>{this.props.text}</Text>
+				</View>
+			</TouchableOpacity>
+		);
+	}
+}
 
 export default class PrimeiroProjeto extends Component {
-	
-	constructor(props){
+
+	constructor(props) {
 		super(props);
-		this.state = {texto1:'Texto 1', texto2:'Texto 2'};
+		this.state = {texto:'Frase do dia...'};
+		this.frases = ['A vida trará coisas boas se tiveres paciência.','Demonstre amor e alegria em todas as oportunidades e verás que a paz nasce dentro de você.','Não compense na ira o que lhe falta na razão.','Defeitos e virtudes são apenas dois lados da mesma moeda.','A maior de todas as torres começa no solo.','Não há que ser forte. Há que ser flexível.','Gente todo dia arruma os cabelos, por que não o coração?'];
 
-		this.escrever = this.escrever.bind(this);
+		this.quebrarBiscoito = this.quebrarBiscoito.bind(this);
 	}
 
-	mudarVogais(texto) {
-		let novoTexto = texto.toLowerCase();
-		novoTexto = novoTexto.replace(/(a|e|i|o|u)/g, 'i');
-		novoTexto = novoTexto.replace(/(á|à|ã|â)/g, 'i');
-		novoTexto = novoTexto.replace(/(é|è|ê)/g, 'i');
-		novoTexto = novoTexto.replace(/(í|ì|î)/g, 'i');
-		novoTexto = novoTexto.replace(/(ó|ò|ô)/g, 'i');
-		novoTexto = novoTexto.replace(/(ú|ù|û)/g, 'i');
-
-		return novoTexto;
-	}
-
-	escrever(t) {
+	quebrarBiscoito() {
 		let s = this.state;
-		s.texto1 = t;
-		s.texto2 = this.mudarVogais(t);
+		let r = Math.floor(Math.random() * this.frases.length);
 
+		s.texto = this.frases[r];
 		this.setState(s);
 	}
 
 	render() {
-
 		return(
 			<View style={styles.body}>
-				<View> 
-					<Text style={styles.titulo}>Criador de mimimi </Text>
-				</View>
-
-				<View style={styles.inputArea}>
-					<TextInput style={styles.input} onChangeText={this.escrever}/>
-				</View>
-
-				<View style={styles.area}>
-					<Text  style={[styles.texto, styles.texto1]}>{this.state.texto1.toUpperCase()}</Text>
-					<Image style={styles.guri} source={require('./images/mimimi.jpg')}/>
-					<Text  style={[styles.texto, styles.texto2]}>{this.state.texto2.toUpperCase()}</Text>
-				</View>
+				<Image source={require('./images/cookie.png')}/>
+				<Text style={styles.texto}>"{this.state.texto}"</Text>
+				<Botao color="#B59619" text="Quebrar Biscoito" onPress={this.quebrarBiscoito}/>
 			</View>
 		);
 	}
 }
 
-const styles = StyleSheet.create ({
+const styles = StyleSheet.create({
 	body:{
-		backgroundColor:'#999999',
-		paddingTop:30,
+		paddingTop:20,
 		flex:1,
-		flexDirection:'column',
+		justifyContent:'center',
 		alignItems:'center'
 	},
-	titulo:{
-		fontSize:30,
-		color:'#FFFFFF'
-	},
-	inputArea:{
-		alignSelf:'stretch'
-	},
-	input:{
-		borderWidth:1,
-		borderColor:'#999999',
-		backgroundColor:'#EEEEEE',
-		color:'#000000',
-		height:40,
-		margin:20,
-		padding:10
-	},
-	area:{
-		width:300,
-		height:300,
-		marginTop:10
-	},
-	guri:{
-		width:300,
-		height:300,
-		marginTop:-70,
-		zIndex:0
-
-	},
 	texto:{
-		fontSize:20,
-		color:'#FFFFFF',
-		padding:10,
-		backgroundColor:'transparent',
-		fontWeight:'bold',
-		textAlign:'center',
-		height:70
-	},
-	texto1:{
-		zIndex:1
-
-	},
-	texto2:{
-		zIndex:1,
-		marginTop:-70
-
-	}
+		fontSize:17,
+		color:'#B59619',
+		margin:30,
+		fontStyle:'italic',
+		textAlign:'center'
+	}	
 });
