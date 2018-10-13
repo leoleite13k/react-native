@@ -1,85 +1,140 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button, TextInput, Image, TouchableOpacity } from 'react-native';
+
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 
 class Botao extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-		this.styles = StyleSheet.create({
-			botao:{
-				width:250,
-				height:50,
-				borderWidth:1,
-				borderColor:props.color,
-				backgroundColor:'transparent',
-				borderRadius: 25,
-			},
-			botaoArea:{
-				flex:1,
-				flexDirection: 'row',
-				justifyContent:'center',
-				alignItems:'center'
-			},
-			botaoText:{
-				color:props.color,
-				fontSize:14,
-				fontWeight:'bold'
-			}
-		});
-	}
 
-	render() {
-		return(
-			<TouchableOpacity style={this.styles.botao} onPress={this.props.onPress}>
-				<View style={this.styles.botaoArea}>
-					<Text style={this.styles.botaoText}>{this.props.text}</Text>
-				</View>
-			</TouchableOpacity>
-		);
-	}
+  constructor(props) {
+    super(props);
+  
+    this.state = {};
+
+    let c = 1;
+    if (props.c) {
+      c = parseInt(props.c);
+    }
+
+    let bg = '#E0E0E0';
+    if (props.bg) {
+      bg = props.bg;
+    }
+
+    this.styles = StyleSheet.create({
+        area:{
+          flex:c,
+          justifyContent: 'center',
+          alignItems: 'center',
+          borderWidth:1,
+          borderColor:'#999999',
+          backgroundColor:bg,
+        },
+        texto:{
+          fontSize: 30,
+        }
+    });
+  }
+
+  render() {
+    return(
+      <TouchableOpacity style={this.styles.area} onPress={this.props.onPress}>
+        <Text style={this.styles.texto}>{this.props.n}</Text>
+      </TouchableOpacity>
+      );
+  }
 }
 
-export default class PrimeiroProjeto extends Component {
+class PrimeiroProjeto extends Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {texto:'Frase do dia...'};
-		this.frases = ['A vida trará coisas boas se tiveres paciência.','Demonstre amor e alegria em todas as oportunidades e verás que a paz nasce dentro de você.','Não compense na ira o que lhe falta na razão.','Defeitos e virtudes são apenas dois lados da mesma moeda.','A maior de todas as torres começa no solo.','Não há que ser forte. Há que ser flexível.','Gente todo dia arruma os cabelos, por que não o coração?'];
+  constructor(props) {
+    super(props);
+  
+    this.state = {resultado:'0'};
+    this.btn = this.btn.bind(this);
+  }
 
-		this.quebrarBiscoito = this.quebrarBiscoito.bind(this);
-	}
+  btn(b) {
+    let s = this.state;
+    
+    if(b == 'c') {
+      s.resultado = '0'
+    } 
+    else if (b == '='){
+      s.resultado = eval(s.resultado);
+    }
+    else {
+      if (s.resultado == '0') {
+        s.resultado = b;
+      } else {
+        s.resultado += b;
+      }
+    }
 
-	quebrarBiscoito() {
-		let s = this.state;
-		let r = Math.floor(Math.random() * this.frases.length);
+    this.setState(s);
 
-		s.texto = this.frases[r];
-		this.setState(s);
-	}
+  }
 
-	render() {
-		return(
-			<View style={styles.body}>
-				<Image source={require('./images/cookie.png')}/>
-				<Text style={styles.texto}>"{this.state.texto}"</Text>
-				<Botao color="#B59619" text="Quebrar Biscoito" onPress={this.quebrarBiscoito}/>
-			</View>
-		);
-	}
+  render() {
+    return (
+      <View style={styles.body}>
+        <View style={styles.linha}>
+          <Text style={styles.resultado}>{this.state.resultado}</Text>
+        </View>
+        <View style={styles.linha}>
+          <Botao c = "3" n = "c" bg="#CCCCCC" onPress={() => {this.btn("c")}}/>
+          <Botao n = "/" bg="#FD9536" onPress={() => {this.btn("/")}}/>
+        </View>
+        <View style={styles.linha}>
+          <Botao n = "7" onPress={() => {this.btn("7")}}/>
+          <Botao n = "8" onPress={() => {this.btn("8")}}/>
+          <Botao n = "9" onPress={() => {this.btn("9")}}/>
+          <Botao n = "*" bg="#FD9536" onPress={() => {this.btn("*")}}/>
+        </View>
+        <View style={styles.linha}>
+          <Botao n = "4" onPress={() => {this.btn("4")}}/>
+          <Botao n = "5" onPress={() => {this.btn("5")}}/>
+          <Botao n = "6" onPress={() => {this.btn("6")}}/>
+          <Botao n = "-" bg="#FD9536" onPress={() => {this.btn("-")}}/>
+        </View>
+        <View style={styles.linha}>
+          <Botao n = "1" onPress={() => {this.btn("1")}}/>
+          <Botao n = "2" onPress={() => {this.btn("2")}}/>
+          <Botao n = "3" onPress={() => {this.btn("3")}}/>
+          <Botao n = "+" bg="#FD9536" onPress={() => {this.btn("+")}}/>
+        </View>
+        <View style={styles.linha}>
+          <Botao c = "2" n = "0" onPress={() => {this.btn("0")}}/>
+          <Botao n = "." onPress={() => {this.btn(".")}}/>
+          <Botao n = "=" bg="#FD9536" onPress={() => {this.btn("=")}}/>
+        </View>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-	body:{
-		paddingTop:20,
-		flex:1,
-		justifyContent:'center',
-		alignItems:'center'
-	},
-	texto:{
-		fontSize:17,
-		color:'#B59619',
-		margin:30,
-		fontStyle:'italic',
-		textAlign:'center'
-	}	
+  body:{
+    flex:1,
+    paddingTop: 20,
+  },
+  linha:{
+    flex:1,
+    flexDirection: 'row',
+  },
+  resultado:{
+    backgroundColor: '#000000',
+    color: '#FFFFFF',
+    fontSize: 50,
+    flex:1,
+    textAlign: 'right',
+    opacity: 0.8,
+  },
+
 });
+
+
+export default PrimeiroProjeto;
