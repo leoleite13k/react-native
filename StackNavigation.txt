@@ -1,0 +1,55 @@
+import React, {Component} from 'react';
+import {StyleSheet, Text, View, Button, TextInput} from 'react-native';
+import {StackNavigator} from 'react-navigation';
+
+class Chat extends Component {
+  static navigationOptions = ({navigation}) => ({title:'Chat'});
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      nome:''
+    }
+
+    this.conversar = this.conversar.bind(this);
+  }
+
+  conversar() {
+    this.props.navigation.navigate('Conversa',{
+      nome:this.state.nome
+    });
+  }
+
+  render() {
+    return(
+      <View>
+        <Text>Tela Inicial</Text>
+        <TextInput style={{height:40, width:200, borderWidth:1, borderColor:'#000000'}} placeholder='Qual e o seu nome ?' onChangeText={(nome) => this.setState({nome})} />
+        <Button title='Conversar' onPress={this.conversar} />
+      </View>
+    );
+  }
+}
+
+class ConversationScreen extends Component {
+  static navigationOptions = ({navigation}) => ({title:navigation.state.params.nome});
+
+  render () {
+    return(
+      <View>
+        <Text>Tela de Conversa</Text>
+      </View>
+    );
+  }
+}
+
+const Navegador = StackNavigator ({
+  Home:{
+    screen:Chat
+  },
+  Conversa:{
+    screen:ConversationScreen
+  }
+});
+
+export default Navegador;
