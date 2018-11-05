@@ -1,18 +1,18 @@
-import {TabNavigator} from 'react-navigation';
+import {StackNavigator} from 'react-navigation';
 
-import TelaInicial from './src/TelaInicial';
-import ConversationScreen from './src/ConversationScreen';
-import ConfigScreen from './src/ConfigScreen';
+import Tela1 from './src/Tela1';
+import Tela2 from './src/Tela2';
+import Tela3 from './src/Tela3';
 
-const Navegador = TabNavigator ({
+const Navegador = StackNavigator ({
   Home:{
-    screen:TelaInicial
+    screen:Tela1
   },
   Conversa:{
-    screen:ConversationScreen
+    screen:Tela2
   },
   Config:{
-    screen:ConfigScreen
+    screen:Tela3
   }
 });
 
