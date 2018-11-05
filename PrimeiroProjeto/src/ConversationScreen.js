@@ -1,16 +1,15 @@
-import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {StackNavigator} from 'react-navigation';
 
-class ConversationScreen extends Component {
-    static navigationOptions = ({navigation}) => ({title:navigation.state.params.nome});
-  
-    render () {
-      return(
-        <View>
-          <Text>Tela de Conversa</Text>
-        </View>
-      );
-    }
+import ConversationScreenList from './ConversationScreenList'
+import ConversationScreenChat from './ConversationScreenChat'
+
+const Navegador = StackNavigator ({
+  ConversationScreenList:{
+    screen:ConversationScreenList
+  },
+  ConversationScreenChat:{
+    screen:ConversationScreenChat
   }
+});
 
-  export default ConversationScreen;
+export default Navegador;

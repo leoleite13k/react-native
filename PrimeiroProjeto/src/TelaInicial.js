@@ -1,33 +1,44 @@
 import React, {Component} from 'react';
-import {Text, View, Button, TextInput} from 'react-native';
+import {Text, View, StyleSheet, Image} from 'react-native';
 
 class TelaInicial extends Component {
-    static navigationOptions = ({navigation}) => ({title:'Chat'});
-  
-    constructor(props) {
-      super(props);
-      this.state = {
-        nome:''
+  static navigationOptions = ({navigation}) => ({
+    tabBarLabel:'Inicial',
+    tabBarIcon:({tintColor, focused}) => {
+      if (focused) {
+        return(
+          <Image source={require('../assets/images/home_on.png')} style={{width:20, height:20}} />
+        );
+      } else {
+        return(
+          <Image source={require('../assets/images/home_off.png')} style={{width:20, height:20}} />
+        );
       }
-  
-      this.conversar = this.conversar.bind(this);
     }
-  
-    conversar() {
-      this.props.navigation.navigate('Conversa',{
-        nome:this.state.nome
-      });
-    }
-  
-    render() {
-      return(
-        <View>
-          <Text>Tela Inicial</Text>
-          <TextInput style={{height:40, width:200, borderWidth:1, borderColor:'#000000'}} placeholder='Qual e o seu nome ?' onChangeText={(nome) => this.setState({nome})} />
-          <Button title='Conversar' onPress={this.conversar} />
-        </View>
-      );
+  });
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      
     }
   }
+
+  render() {
+    return(
+      <View style={styles.container}>
+        <Text>Tela Inicial</Text>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container:{
+    flex : 1,
+    justifyContent:'center',
+    alignItems:'center'
+  }
+});
 
   export default TelaInicial;
