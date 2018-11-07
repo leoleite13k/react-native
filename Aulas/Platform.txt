@@ -1,0 +1,38 @@
+import React, { Component } from 'react';
+import {View, Text, StyleSheet, Platform} from 'react-native';
+
+export default class PrimeiroProjeto extends Component {
+
+	constructor(props) {
+	  	super(props);
+	
+	  	this.state = {};
+	}
+
+	render() {
+		return(
+			<View style={styles.container}>
+				<Text style={styles.texto}>Meu sistema é {Platform.OS}, Versão: {Platform.Version}</Text>
+			</View>
+		);
+	}
+}
+
+const styles = StyleSheet.create({
+	container:{
+		flex:1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		marginTop:20
+	},
+	texto:Platform.select({
+		ios:{
+			fontSize: 16,
+			color: '#0000FF'
+		},
+		android:{
+			fontSize: 20,
+			color: '#00FF00'
+		}
+	})
+});

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
+import {Text, View, StyleSheet, Image, Button} from 'react-native';
 
-class Tela3 extends Component {
+class Tela1 extends Component {
   static navigationOptions = ({navigation}) => ({
-    title:'Tela3'
+    title:'Tela1'
   });
 
   constructor(props) {
@@ -11,12 +11,19 @@ class Tela3 extends Component {
     this.state = {
       
     }
+
+    this.abrirTela = this.abrirTela.bind(this);
+  }
+
+  abrirTela() {
+    this.props.navigation.navigate('Tela2');
   }
 
   render() {
     return(
       <View style={styles.container}>
-        <Text>Tela 3</Text>
+        <Text>Tela 1</Text>
+        <Button title='Ir para Tela 2' onPress={this.abrirTela} />
       </View>
     );
   }
@@ -30,4 +37,4 @@ const styles = StyleSheet.create({
   }
 });
 
-  export default Tela3;
+  export default Tela1;
