@@ -1,0 +1,112 @@
+import React, { Component } from 'react';
+import {View, Text, StyleSheet, Image, Button} from 'react-native';
+import {TabNavigator} from 'react-navigation';
+
+class Tela1 extends Component {
+	static navigationOptions = {
+		tabBarlabel:'Tela 1',
+		tabBarIcon:() => (
+			<Image source={require('./assets/images/home_on.png')} style={styles.icon} />
+		)
+	}
+
+	constructor(props) {
+	  	super(props);
+	
+	  	this.state = {};
+	}
+
+	render() {
+		return(
+			<View style={styles.container}>
+				<Text>Tela 1</Text>
+			</View>
+		);
+	}
+}
+
+class Tela2 extends Component {
+	static navigationOptions = {
+		tabBarlabel:'Tela 2',
+		// Desabilitar a Tab Bar = tabBarVisible:false,
+		tabBarIcon:() => (
+			<Image source={require('./assets/images/chat_on.png')} style={styles.icon} />
+		)
+	}
+
+	constructor(props) {
+	  	super(props);
+	
+	  	this.state = {};
+	}
+
+	render() {
+		return(
+			<View style={styles.container}>
+				<Text>Tela 2</Text>
+			</View>
+		);
+	}
+}
+
+const styles = StyleSheet.create({
+	container:{
+		flex:1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		marginTop:20
+	},
+	icon:{
+		width: 26,
+		height: 26,
+
+	},
+});
+
+const Navegador = TabNavigator ({
+	Tela1:{
+		screen:Tela1
+	},
+	Tela2:{
+		screen:Tela2
+	}
+},{
+	animationEnabled:true,
+	initialRouteName:'Tela1',
+	order:['Tela2', 'Tela1'],
+	// Determina a posição do tab bar = tabBarPosition:'bottom'
+	// Habilitar animacao para muda a tela = animationEnabled:true/false
+	// Determina a Tela inicial = initialRouteName:'NomedaRota'
+	// Mudar a ordem dos tabs = order:['Tela','Tela2']
+	// Alterar props do tabBar usando o = tabBarOptions:{}
+	tabBarOptions:{
+		showIcon:true,
+		showLabel:true,
+		// Cor da letra ativada
+		activeTintColor:'#FF0000',
+		// Cor da letra inativada
+		inactiveTintColor:'#00FF00',
+		tabStyle:{
+			//backgroundColor: '#FFFF00',
+		},
+		labelStyle:{
+			fontSize: 17,
+		},
+		iconStyle:{
+
+		}
+
+		//Options do Android
+		/*
+		upperCaseLabel:true,
+		pressColor:'#FF0000' --Version: 5+
+		scrollEnabled:true
+		indicatorStyle:{
+			
+		}
+		*/
+	}
+
+});
+
+export default Navegador;
