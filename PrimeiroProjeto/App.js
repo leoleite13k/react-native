@@ -89,7 +89,7 @@ class PrimeiroProjeto extends Component {
                         <Text style={styles.titulo}>Nome</Text>
                         <TextInput style={styles.input} placeholder='Nome' onChangeText={({nome}) => this.setState({nome})} />
                         <Text style={styles.titulo}>Data de Nascimento</Text>
-                        <DatePickerIOS date={this.state.chosenDate} onDateChange={this.setDate}/>
+                        <DatePickerIOS date={this.state.chosenDate} onDateChange={this.setDate} mode='date' />
                         <Text style={styles.titulo}>Sexo</Text>
                         <Picker selectedValue={this.state.sexo} onValueChange={(itemValue, itemIndex) => this.setState({sexo:itemValue})} >
                             {sexoItems}
