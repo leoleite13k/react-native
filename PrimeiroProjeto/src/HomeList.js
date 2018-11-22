@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Image, FlatList, Platform, Text} from 'react-native';
+import {View, StyleSheet, Image, FlatList, Platform, Text, TouchableHighlight} from 'react-native';
 
 class HomeList extends Component {
 
@@ -24,7 +24,7 @@ class HomeList extends Component {
                     title: 'Saladas',
                     img: require('../assets/images/tipos/saladas.png'),
                     description: 'Pratos de Saladas',
-                    bg:'#e35339',
+                    bg:'#a6bb24',
                     product: [
                         {name: 'Salada de Frango', img: require('../assets/images/cardapio/saladas/salada-fr.png')},
                         {name: 'Salada Água Doce', img: require('../assets/images/cardapio/saladas/salada_aguadoc_.png')},
@@ -37,7 +37,7 @@ class HomeList extends Component {
                     title: 'Bebidas',
                     img: require('../assets/images/tipos/bebidas.png'),
                     description: 'Bebidas',
-                    bg:'#e35339',
+                    bg:'#079ed4',
                     product: [
                         {name: 'Caipirosca', img: require('../assets/images/cardapio/bebidas/capirosc_3.png')},
                         {name: 'Cookie Cream', img: require('../assets/images/cardapio/bebidas/cookies_crea.png')},
@@ -52,7 +52,7 @@ class HomeList extends Component {
                     title: 'Sobremesas',
                     img: require('../assets/images/tipos/sobremesa.png'),
                     description: 'Sobremesas Deliciosas',
-                    bg:'#e35339',
+                    bg:'#fcb81c',
                     product: [
                         {name: 'Brownie', img: require('../assets/images/cardapio/sobremesas/brownie_gd.png')},
                         {name: 'Creme Papaya', img: require('../assets/images/cardapio/sobremesas/creme_papaya_cassis_gd.png')},
@@ -60,7 +60,6 @@ class HomeList extends Component {
                     ]
 
                 },
-
             ],
         }
     }
@@ -98,15 +97,26 @@ class Lista extends Component {
     constructor(props) {
         super(props);
         this.state={
-
         }
+
+        this.clicou = this.clicou.bind(this);
+    }
+
+    clicou() {
+
     }
 
     render() {
         return(
-            <View>
-                <Text>...</Text>
-            </View>
+            <TouchableHighlight underlayColor='#CCCCCC' onPress={this.clicou}>
+                <View style={[styles.listaItem, {backgroundColor:this.props.data.bg}]}>
+                    <Image source={this.props.data.img} style={styles.listaImagem} />
+                    <View>
+                        <Text style={styles.listaTitle}>{this.props.data.title}</Text>
+                        <Text style={styles.listaDescription}>{this.props.data.description}</Text>
+                    </View>
+                </View>
+            </TouchableHighlight>
         );
     }
 }
@@ -120,7 +130,28 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         marginTop: (Platform.OS == 'ios') ? 20 : 0,
-    }
+    },
+    listaItem:{
+        height: 100,
+        flex:1,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    listaImagem:{
+        width:64,
+        height:64,
+        marginLeft: 20,
+        marginRight: 20,
+    },
+    listaTitle:{
+        color:'#FFFFFF',
+        fontSize:25,
+        fontWeight: 'bold',
+    },
+    listaDescription:{
+        color:'#FFFFFF',
+        fontSize:16
+    },
 });
 
 export default HomeList;

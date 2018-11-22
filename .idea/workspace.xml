@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="10d3814c-a0ed-4011-a365-b59ff5d40216" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aulas/projetoFormulario.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inicioApp.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimeiroProjeto/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/PrimeiroProjeto/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/.buckconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/.flowconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/.watchmanconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/BUCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/src/main/java/com/projetoteste/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/src/main/java/com/projetoteste/MainApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/keystores/BUCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/keystores/debug.keystore.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/android/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/ios/ProjetoTeste-tvOS/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/ios/ProjetoTeste-tvOSTests/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/ios/ProjetoTeste.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/ios/ProjetoTeste.xcodeproj/xcshareddata/xcschemes/ProjetoTeste-tvOS.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/ios/ProjetoTeste.xcodeproj/xcshareddata/xcschemes/ProjetoTeste.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/ios/ProjetoTeste/AppDelegate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/ios/ProjetoTeste/AppDelegate.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/ios/ProjetoTeste/Base.lproj/LaunchScreen.xib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/ios/ProjetoTeste/Images.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/ios/ProjetoTeste/Images.xcassets/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/ios/ProjetoTeste/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/ios/ProjetoTeste/main.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/ios/ProjetoTesteTests/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/ios/ProjetoTesteTests/ProjetoTesteTests.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetoTeste/yarn.lock" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PrimeiroProjeto/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Aulas/projetoFormulario.txt" />
+        <option value="$PROJECT_DIR$/ProjetoTeste/App.js" />
+        <option value="$PROJECT_DIR$/PrimeiroProjeto/App.js" />
+        <option value="$PROJECT_DIR$/inicioApp.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1149" />
+    <option name="height" value="877" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="react-native" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-native" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-native" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-native" type="462c0819:PsiDirectoryNode" />
+              <item name="PrimeiroProjeto" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="10d3814c-a0ed-4011-a365-b59ff5d40216" name="Default Changelist" comment="" />
+      <created>1542754447555</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542754447555</updated>
+      <workItem from="1542754451637" duration="1720000" />
+      <workItem from="1542756799542" duration="713000" />
+      <workItem from="1542757626999" duration="143000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2576000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1149" height="877" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3299363" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/ProjetoTeste/App.js</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ProjetoTeste/App.js" />
+    <entry file="file://$PROJECT_DIR$/Aulas/projetoFormulario.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-41">
+          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inicioApp.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PrimeiroProjeto/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
