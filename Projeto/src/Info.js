@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Image, StyleSheet, Platform} from 'react-native';
 
-class Home extends Component{
+class Info extends Component{
     render() {
 
         let nome = 'Leonardo Leite';
@@ -15,10 +15,10 @@ class Home extends Component{
 }
 
 const styles = StyleSheet.create({
-   container:{
-       flex: 1,
-       marginTop: (Platform.OS == 'ios') ? 20 : 0,
-   }
+    container:{
+        flex: 1,
+        marginTop: (Platform.OS == 'ios') ? 20 : 0,
+    }
 });
 
-export default Home;
+export default Info;
