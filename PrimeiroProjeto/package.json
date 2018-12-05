@@ -10,7 +10,8 @@
     "react": "16.6.0-alpha.8af6728",
     "react-native": "0.57.4",
     "react-native-datepicker": "^1.7.2",
-    "react-navigation": "^2.18.2"
+    "react-native-gesture-handler": "^1.0.10",
+    "react-navigation": "^3.0.5"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",

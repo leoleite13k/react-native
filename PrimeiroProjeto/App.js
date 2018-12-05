@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {TabNavigator} from 'react-navigation';
+import {createBottomTabNavigator, createNavigationContainer} from 'react-navigation';
 
 import Home from './src/Home';
 import Contato from './src/Contato';
 import Horarios from './src/Horarios';
 import Sobre from './src/Sobre';
 
-const Navegador = TabNavigator({
+const Navegador = createBottomTabNavigator({
    Home:{
        screen:Home
    },
@@ -19,11 +19,7 @@ const Navegador = TabNavigator({
     Sobre:{
        screen:Sobre
     }
-}, {
-    tabBarPosition:'bottom',
-    tabBarOptions:{
-        showIcon:true
-    }
 });
 
-export default Navegador;
+const AppContainer = createNavigationContainer(Navegador);
+export default AppContainer;
