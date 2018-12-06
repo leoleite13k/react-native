@@ -21,17 +21,6 @@ const Navegador = createBottomTabNavigator({
     Info: {
         screen: Info
     },
-},
-{
-    defaultNavigationOptions:{
-        tabBarIcon: ({focused, tintColor}) => {
-            if (focused) {
-                return (
-                  <Image source={require('./assets/images/')} style={styles.icon} /> // Inserir dinamico
-                );
-            }
-        }
-    }
 });
 
 const styles = StyleSheet.create({

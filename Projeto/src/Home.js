@@ -3,9 +3,6 @@ import {View, Image, StyleSheet, Platform} from 'react-native';
 
 class Home extends Component{
     render() {
-
-        let nome = 'Leonardo Leite';
-
         return (
             <View style={styles.container}>
 
