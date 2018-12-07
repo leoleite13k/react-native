@@ -1,12 +1,10 @@
-import React, {Component}   from 'react';
-import { Image, StyleSheet} from 'react-native';
+import React from 'react';
 import { createBottomTabNavigator, createAppContainer} from 'react-navigation';
 
 import Home      from './src/Home';
 import Contact   from './src/Contact';
 import Schedules from './src/Schedules';
 import Info      from './src/Info';
-
 
 const Navegador = createBottomTabNavigator({
     Home: {
@@ -21,13 +19,6 @@ const Navegador = createBottomTabNavigator({
     Info: {
         screen: Info
     },
-});
-
-const styles = StyleSheet.create({
-   icon:{
-       width: 26,
-       height: 26,
-   }
 });
 
 const AppContainer = createAppContainer(Navegador);

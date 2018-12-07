@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {View, Image, StyleSheet, Platform} from 'react-native';
+import {View, StyleSheet, Text,Platform} from 'react-native';
 
-class Schedules extends Component{
+class HomeList extends Component{
     render() {
         return (
             <View style={styles.container}>
-
+                <Text>Testando</Text>
             </View>
         );
     }
@@ -22,4 +22,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Schedules;
+export default HomeList;

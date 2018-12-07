@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Image, StyleSheet, Platform} from 'react-native';
 
-class Schedules extends Component{
+class Contato extends Component{
     render() {
         return (
             <View style={styles.container}>
@@ -22,4 +22,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Schedules;
+export default Contato;
