@@ -9,33 +9,73 @@ import {Image, StyleSheet} from "react-native";
 
 const Navegador = createBottomTabNavigator({
    Home:{
-       screen: Home
+       screen: Home,
+       navigationOptions: {
+           tabBarLabel:"Home",
+           tabBarIcon: ({focused, tintColor}) => {
+               if (focused) {
+                   return (
+                       <Image source={require('./assets/images/home_azul.png')} style={styles.icon}/>
+                   );
+               } else {
+                   return (
+                       <Image source={require('./assets/images/home_preto.png')} style={styles.icon}/>
+                   );
+               }
+           }
+       }
    },
    Horario:{
-       screen: Horario
+       screen: Horario,
+       navigationOptions: {
+           tabBarLabel:"Horário",
+           tabBarIcon: ({focused, tintColor}) => {
+               if (focused) {
+                   return (
+                       <Image source={require('./assets/images/horario_azul.png')} style={styles.icon}/>
+                   );
+               } else {
+                   return (
+                       <Image source={require('./assets/images/horario_preto.png')} style={styles.icon}/>
+                   );
+               }
+           }
+       }
    },
    Contato:{
-       screen:Contato
+       screen:Contato,
+       navigationOptions: {
+           tabBarLabel:"Contato",
+           tabBarIcon: ({focused, tintColor}) => {
+               if (focused) {
+                   return (
+                       <Image source={require('./assets/images/contato_azul.png')} style={styles.icon}/>
+                   );
+               } else {
+                   return (
+                       <Image source={require('./assets/images/contato_preto.png')} style={styles.icon}/>
+                   );
+               }
+           }
+       }
    },
     Sobre:{
-       screen: Sobre
-   }
-},
-{
-    defaultNavigationOptions: {
-        tabBarIcon:({ focused, tintColor }) => {
-            if (focused) {
-                return (
-                    <Image source={require('./assets/images/home_azul.png')} style={styles.icon} />
-                );
-            }else {
-                return (
-                    <Image source={require('./assets/images/home_preto.png')} style={styles.icon} />
-                );
+        screen: Sobre,
+        tabBarLabel:"Sobre",
+        navigationOptions: {
+            tabBarIcon: ({focused, tintColor}) => {
+                if (focused) {
+                    return (
+                        <Image source={require('./assets/images/sobre_azul.png')} style={styles.icon}/>
+                    );
+                } else {
+                    return (
+                        <Image source={require('./assets/images/sobre_preto.png')} style={styles.icon}/>
+                    );
+                }
             }
         }
-
-    }
+   }
 });
 
 const styles = StyleSheet.create({

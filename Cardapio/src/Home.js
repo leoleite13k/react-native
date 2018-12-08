@@ -1,16 +1,21 @@
 import React, {Component} from 'react';
-import {Image, StyleSheet} from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
-import HomeList from './HomeList';
-import HomeProduct from "./HomeProduct";
+import HomeLista from './HomeLista';
+import HomeProduto from "./HomeProduto";
 
 const Home = createStackNavigator({
     HomeList:{
-        screen: HomeList
+        screen: HomeLista,
+        navigationOptions:{
+            title:"Restaurante"
+        }
     },
     HomeProduct:{
-        screen:HomeProduct
+        screen:HomeProduto,
+        navigationOptions:{
+            title:"Produtos"
+        }
     }
 },
 {

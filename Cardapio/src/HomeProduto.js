@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Image, StyleSheet, Platform} from 'react-native';
 
-class HomeProduct extends Component{
+class HomeProduto extends Component{
     render() {
         return (
             <View style={styles.container}>
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default HomeProduct;
+export default HomeProduto;
