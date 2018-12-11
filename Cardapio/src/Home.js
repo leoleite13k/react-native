@@ -1,27 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 import HomeLista from './HomeLista';
-import HomeProduto from "./HomeProduto";
+import HomeProduto from './HomeProduto';
 
 const Home = createStackNavigator({
-    HomeList:{
+    HomeLista:{
         screen: HomeLista,
         navigationOptions:{
             title:"Restaurante"
         }
     },
-    HomeProduct:{
+    HomeProduto:{
         screen:HomeProduto,
-        navigationOptions:{
-            title:"Produtos"
-        }
     }
-},
-{
-    defaultNavigationOptions:{
-        title:"Home"
-    },
 });
 
 const AppContainerHome = createAppContainer(Home);

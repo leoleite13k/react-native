@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Platform, FlatList, Text, Image, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, FlatList, Text, Image, TouchableOpacity} from 'react-native';
+import {NavigationActions} from 'react-navigation';
 
 class HomeLista extends Component{
     constructor(props){
@@ -8,11 +9,11 @@ class HomeLista extends Component{
             lista:[
                 {
                     key:1,
-                    titulo:"Prato Executivo",
+                    titulo:'Prato Executivo',
                     img:require('../assets/images/tipos/pe.png'),
                     descricao:"Pratos Executivos Tabelado",
                     bg:'#E35339',
-                    products:[
+                    produtos:[
                         {key:1, name:"Prato de Frango",  img:require('../assets/images/cardapio/pe/executivos_frang_.png')},
                         {key:2, name:"Prato de Peixe",   img:require('../assets/images/cardapio/pe/executivos_peix_.png')},
                         {key:3, name:"Prato de Picanha", img:require('../assets/images/cardapio/pe/executivos_picanh_.png')},
@@ -20,11 +21,11 @@ class HomeLista extends Component{
                 },
                 {
                     key:2,
-                    titulo:"Saladas",
+                    titulo:'Saladas',
                     img:require('../assets/images/tipos/saladas.png'),
                     descricao:"Pratos de Salada",
                     bg:'#A6BB24',
-                    products:[
+                    produtos:[
                         {key:1, name:"Salada de Frango", img:require('../assets/images/cardapio/saladas/salada-fr.png')},
                         {key:2, name:"Salada Água Doce", img:require('../assets/images/cardapio/saladas/salada_aguadoc_.png')},
                         {key:3, name:"Salada de Salmão", img:require('../assets/images/cardapio/saladas/salada_salma.png')},
@@ -32,11 +33,11 @@ class HomeLista extends Component{
                 },
                 {
                     key:3,
-                    titulo:"Bebidas",
+                    titulo:'Bebidas',
                     img:require('../assets/images/tipos/bebidas.png'),
                     descricao:"Tipos de Bebidas",
                     bg:'#079ED4',
-                    products:[
+                    produtos:[
                         {key:1, name:"Caipirosca",   img:require('../assets/images/cardapio/bebidas/capirosc_3.png')},
                         {key:2, name:"Cookie Cream", img:require('../assets/images/cardapio/bebidas/cookies_crea.png')},
                         {key:3, name:"Morango GD",   img:require('../assets/images/cardapio/bebidas/morango_gd.png')},
@@ -46,11 +47,11 @@ class HomeLista extends Component{
                 },
                 {
                     key:4,
-                    titulo:"Sobremesas",
+                    titulo:'Sobremesas',
                     img:require('../assets/images/tipos/sobremesa.png'),
                     descricao:"Tipos de Sobremesas",
                     bg:'#FCB81C',
-                    products:[
+                    produtos:[
                         {key:1, name:"Brownie",         img:require('../assets/images/cardapio/sobremesas/brownie_gd.png')},
                         {key:2, name:"Creme de Papaya", img:require('../assets/images/cardapio/sobremesas/creme_papaya_cassis_gd.png')},
                         {key:3, name:"Delicia Gelada",  img:require('../assets/images/cardapio/sobremesas/delicia_gelada_gd.png')},
@@ -64,8 +65,8 @@ class HomeLista extends Component{
         return (
             <View style={styles.container}>
                 <FlatList
-                    renderItem={({item}) => <Lista data={item}/>}
                     data={this.state.lista}
+                    renderItem={({item}) => <Lista data={item} navigation={this.props.navigation} />}
                 />
             </View>
         );
@@ -76,13 +77,13 @@ class Lista extends Component{
     constructor(props){
         super(props);
         this.state = {
-        }
+        };
 
         this.clicou = this.clicou.bind(this);
     }
 
     clicou(){
-
+        this.props.navigation.navigate('HomeProduto', {produtos:this.props.data.produtos, titulo:this.props.data.titulo});
     }
 
     render() {
