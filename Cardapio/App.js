@@ -12,7 +12,7 @@ const Navegador = createBottomTabNavigator({
        screen: Home,
        navigationOptions: {
            tabBarLabel:"Home",
-           tabBarIcon: ({focused, tintColor}) => {
+           tabBarIcon: ({focused}) => {
                if (focused) {
                    return (
                        <Image source={require('./assets/images/home_azul.png')} style={styles.icon}/>
@@ -29,7 +29,7 @@ const Navegador = createBottomTabNavigator({
        screen: Horario,
        navigationOptions: {
            tabBarLabel:"Horário",
-           tabBarIcon: ({focused, tintColor}) => {
+           tabBarIcon: ({focused}) => {
                if (focused) {
                    return (
                        <Image source={require('./assets/images/horario_azul.png')} style={styles.icon}/>
@@ -46,7 +46,7 @@ const Navegador = createBottomTabNavigator({
        screen:Contato,
        navigationOptions: {
            tabBarLabel:"Contato",
-           tabBarIcon: ({focused, tintColor}) => {
+           tabBarIcon: ({focused}) => {
                if (focused) {
                    return (
                        <Image source={require('./assets/images/contato_azul.png')} style={styles.icon}/>
@@ -63,7 +63,7 @@ const Navegador = createBottomTabNavigator({
         screen: Sobre,
         tabBarLabel:"Sobre",
         navigationOptions: {
-            tabBarIcon: ({focused, tintColor}) => {
+            tabBarIcon: ({focused}) => {
                 if (focused) {
                     return (
                         <Image source={require('./assets/images/sobre_azul.png')} style={styles.icon}/>
