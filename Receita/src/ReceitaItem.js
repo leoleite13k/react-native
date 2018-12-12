@@ -16,15 +16,19 @@ class ReceitaItem extends Component {
 
   render() {
     return (
-      <View>
-      	<Text>...</Text>
+      <View style={styles.area}>
+      	
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-
+    area:{
+        height: 80,
+        borderBottomWidth: 1,
+        
+    }
 });
 
 
