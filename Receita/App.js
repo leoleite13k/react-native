@@ -5,18 +5,18 @@ import Lista from './src/Lista.js'
 import Receita from './src/Receita.js'
 
 const Navegador = createStackNavigator({
-  Lista:{
-    screen: Lista,
-    navigationOption:{
-      title:'App de Receitas'
-    }
-  },
-  Receita:{
-    screen: Receita,
-    navigationOption:{
-      title:'App de Receitas'
-    }
-  }
+	Lista:{
+    	screen: Lista,
+    	navigationOptions:{
+      		title:'App de Receitas'
+    	}
+	},
+	Receita:{
+    	screen: Receita,
+    	navigationOptions:{
+    	header:null
+    	}
+  	}
 });
 
 const AppContainer = createAppContainer(Navegador);
