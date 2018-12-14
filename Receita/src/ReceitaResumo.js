@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 class ReceitaResmo extends Component {
   constructor(props) {
@@ -10,11 +10,29 @@ class ReceitaResmo extends Component {
 
   render() {
     return (
-      <View>
-        <Text> textInComponent </Text>
-      </View>
+      	<View style={styles.areaTab}>
+        	<Text style={styles.nome}>{this.props.screenProps.nome}</Text>
+			<Text style={styles.por}>Por: {this.props.screenProps.por}</Text>
+			<Text style={styles.descricao}>{this.props.screenProps.descricao}</Text>
+      	</View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+	areaTab:{
+		flex:1,
+		margin:10
+	},
+	nome:{
+		fontSize: 26
+	},
+	por:{
+		color:'#F9B965'
+	},
+	descricao:{
+		fontSize: 15
+	}
+});
 
 export default ReceitaResmo;

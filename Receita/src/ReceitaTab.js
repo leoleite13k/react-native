@@ -5,7 +5,6 @@ import ReceitaResumo        from './ReceitaResumo';
 import ReceitaIngredientes  from './ReceitaIngredientes';
 import ReceitaModo          from './ReceitaModo';
 
-
 const Abas = createMaterialTopTabNavigator({
     ReceitaResumo:{
         screen:ReceitaResumo,
@@ -30,16 +29,18 @@ const Abas = createMaterialTopTabNavigator({
     tabBarOptions: {
         upperCaseLabel: false,
         labelStyle: {
-          fontSize: 15,
+          fontSize: 14,
           color: '#000000',
           fontWeight: 'bold'
         },
         style: {
-            backgroundColor: '#CCCCCC',
+            backgroundColor: '#EEEEEE'
         },
         indicatorStyle:{
-            backgroundColor: '#000000',
-        }
+            backgroundColor: '#000000'
+        },
+        activeTintColor:'#333333',
+        inactiveTintColor: '#CCCCCC'
     }    
 });
 

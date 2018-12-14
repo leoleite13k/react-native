@@ -15,8 +15,8 @@ export default class Receita extends Component {
         	<TouchableHighlight underlayColor='#CCCCCC' onPress={() => this.props.navigation.goBack()} style={styles.backButtom} >
 				<Image source={require('../assets/images/back.png')} style={styles.backImagem} />
 			</TouchableHighlight>
-			<Image source={{uri:this.props.navigation.state.params.imagem}} style={styles.receitaImagem}/>
-			<ReceitaTab />
+			<Image source={{uri:this.props.navigation.state.params.data.imagem}} style={styles.receitaImagem}/>
+			<ReceitaTab screenProps={this.props.navigation.state.params.data} />
       	</View>
     );
   }
@@ -25,7 +25,6 @@ export default class Receita extends Component {
 const styles = StyleSheet.create({
     container:{
 		flex: 1,
-		backgroundColor:'#CCCCCC',
 		marginTop: 20
 	},
 	backImagem:{

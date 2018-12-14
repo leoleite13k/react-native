@@ -11,7 +11,7 @@ class ReceitaItem extends Component {
 	}
 
 	clicou() {
-		this.props.navigation.navigate('Receita', {imagem:this.props.data.imagem});
+		this.props.navigation.navigate('Receita', {data:this.props.data});
 	}
 
 	render() {
