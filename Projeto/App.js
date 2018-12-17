@@ -9,7 +9,8 @@ export class Projeto extends Component {
 		super(props)
 	
 		this.state = {
-			 filmes:[]
+			 filmes:[],
+			 loading:true
 		};
 
 		fetch('https://filmespy.herokuapp.com/api/v1/filmes')
@@ -17,28 +18,45 @@ export class Projeto extends Component {
 			.then((json) => {
 				let state = this.state;
 				state.filmes = json.filmes;
+				state.loading = false;
 				this.setState(state);
 			});
 	}
 	
-
   render() {
-    return (
-      <View style={styles.container}>
-        <FlatList 
-					data={this.state.filmes}
-					renderItem={({item}) => <Filme data={item} />}
-				/>
-      </View>
-    )
-  }
+		if (this.state.loading) {
+			return (
+				<View style={[styles.container, styles.loading]}>
+					<Text style={styles.loadingTxt}>Carregando...</Text>
+				</View>
+			);
+		} else {
+    	return (
+				<View style={styles.container}>
+					<FlatList 
+						data={this.state.filmes}
+						renderItem={({item}) => <Filme data={item} />}
+						keyExtractor={(item, index) => item.titulo}
+					/>
+				</View>
+			);
+		}
+	}
 }
 
 const styles = StyleSheet.create({
   container:{
 		flex: 1,
-		marginTop: Platform.OS == 'ios' ? 20 : 0
-  }
+		marginTop: Platform.OS == 'ios' ? 30 : 0
+	},
+	loading:{
+		justifyContent:'center',
+		alignItems:'center',
+	},
+	loadingTxt:{
+		fontSize: 18,
+		fontWeight:'bold'
+	}
 })
 
 export default Projeto
