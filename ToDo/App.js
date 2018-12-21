@@ -50,7 +50,6 @@ export default class App extends Component{
         })
             .then((retorno) => retorno.json())
             .then((json) => {
-                alert("Item inserido com sucesso!")
                 this.loadLista();
             })
     }
@@ -69,7 +68,7 @@ export default class App extends Component{
                 </View>
                 <FlatList 
                     data={this.state.lista}
-                    renderItem={({item}) => <ListaItem data={item} />}
+                    renderItem={({item}) => <ListaItem data={item} url={this.url} loadFunction={this.loadLista} />}
                     keyExtractor={(item, index) => item.id}
                 />
             </View>
@@ -83,7 +82,6 @@ const styles = StyleSheet.create({
         marginTop: Platform.OS == 'ios' ? 30 : 0
     },
         addArea:{
-        marginBottom: 20,
         backgroundColor: '#DDDDDD',
         height: 120
     },
