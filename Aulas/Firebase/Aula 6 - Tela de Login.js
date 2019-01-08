@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, View, Text, TextInput, Button, FlatList } from 'react-native';
+import { Platform, StyleSheet, View, Text, TextInput, Button } from 'react-native';
 import firebase from 'firebase';
-
-import Lista from './'
 
 class AuthFirebase extends Component {
 
@@ -10,15 +8,11 @@ class AuthFirebase extends Component {
         super(props);
     
         this.state = {
-            uid:'',
             email:'',
-            senha:'',
-            titulo:'',
-            lista:[]
+            senha:''
         };
 
         this.logar = this.logar.bind(this);
-        this.adicionar = this.adicionar.bind(this);
 
         var config = {
             apiKey: "AIzaSyC-6lkzPWBUVlZtzIQ6GhFacKZ57stT8o0",
@@ -34,32 +28,13 @@ class AuthFirebase extends Component {
 
         firebase.auth().onAuthStateChanged((user) => {
             if (user) {
-                let state  = this.state;
-                state.uid = user.uid;
-                this.setState(state);
-
-
                 firebase.database().ref('usuario').child(user.uid).once('value')
                 .then((snapshot) => {
                     let nome = snapshot.val().nome;
+
                     alert("Seja Bem Vindo(a), "+nome);
                 });
-
-                firebase.database().ref('todo').child(user.uid).on('value', (snapshot) => {
-                    let state = this.state;
-                    state.lista =[];
-
-                    snapshot.forEach((childItem) => {
-                        state.lista.push({
-                            titulo:childItem.val().titulo,
-                            key:childItem.key
-                        });
-                    });
-
-                    this.setState(state);
-                });
             }
-
         });
     }
 
@@ -72,10 +47,6 @@ class AuthFirebase extends Component {
         });
     }
 
-    adicionar() {
-
-    }
-
     render() {
         return (
             <View style={styles.container}>
@@ -85,15 +56,6 @@ class AuthFirebase extends Component {
                 <Text style={styles.texto}>Senha:</Text>
                 <TextInput secureTextEntry={true} onChangeText={(senha) => this.setState({senha})} style={styles.input} />
                 <Button title="Login" onPress={this.logar} />
-                <View style={styles.adicionar}>
-                    <Text style={styles.titulo}>Adicionar a Lista </Text>
-                    <TextInput onChangeText={(titulo) => this.setState({titulo})} style={styles.input} />
-                    <Button title="Adicionar" onPress={this.adicionar} />
-                </View>
-                <FlatList 
-                    data={this.state.lista}
-                    renderItem={({item}) => <Lista data={item}/> }
-                />
             </View>
         );
     }
@@ -122,14 +84,6 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         fontSize: 20,
         fontWeight: 'bold',
-    },
-    adicionar:{
-        borderWidth: 1,
-        borderColor: '#000000',
-        borderStyle: 'solid',
-        padding: 5,
-        margin: 10,
-        marginTop: 50,
     }
 });
 
