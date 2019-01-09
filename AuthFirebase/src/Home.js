@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, View, Text } from 'react-native';
-import firebase from './FirebaseConn';
+import Sistema from './Sistema';
 
 class Home extends Component {
 

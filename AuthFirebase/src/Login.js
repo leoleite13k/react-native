@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, View, Text, TextInput, Button } from 'react-native';
-import firebase from './FirebaseConn';
+import Sistema from './Sistema';
 
 class Login extends Component {
 
@@ -14,12 +14,13 @@ class Login extends Component {
 
         this.logar = this.logar.bind(this);
 
-        firebase.auth().signOut();
+        Sistema.logout();
     }
 
     logar() {
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user) {
+        
+        //firebase.auth().onAuthStateChanged((user) => {
+            //if (user) {
                 // Passando antes de abrir o Home
                 // Sempre legal pegar coisas que afzem parte da interface !!!
                 /*
@@ -33,14 +34,21 @@ class Login extends Component {
 
                 //Passando depois no Home
                 // SOmente passar assim se for carregar algo na outra Tela (Lista...)
-                this.props.navigation.navigate('Home');
+                //this.props.navigation.navigate('Home');
+            //}
+        //});
+
+        Sistema.listener((user) => {
+            if(user) {
+                Sistema.getUserInfo((snapshot) => {
+                    this.props.navigation.navigate('Home', {
+                        nome:snapshot.val().nome    
+                    });
+                });
             }
         });
-
-        firebase.auth().signInWithEmailAndPassword(
-            this.state.email,
-            this.state.senha
-        ).catch((error) =>{
+        
+        Sistema.login(this.state.email, this.state.senha).catch((error) => {
             alert(error.code);
         });
     }
