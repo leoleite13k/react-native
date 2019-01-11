@@ -9,11 +9,12 @@ class Home extends Component {
     
         this.state = {
             // Passando na Tela de login !
-            //nome:this.props.navigation.state.params.nome
-            nome:''
+            nome:this.props.navigation.state.params.nome
+            //nome:''
         };
 
         //Pegando depois que entrou no Home !
+        /*
         if (firebase.auth().currentUser) {
             firebase.database().ref('usuario').child(firebase.auth().currentUser.uid).once('value')
             .then((snapshot) =>{
@@ -22,6 +23,7 @@ class Home extends Component {
                 this.setState(state);
             });
         }
+        */
 
     }
 

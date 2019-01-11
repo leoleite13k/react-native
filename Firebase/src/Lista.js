@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, View, Text, TouchableHighlight } from 'react-native';
+import { Platform, StyleSheet, View, Text } from 'react-native';
 
 class Lista extends Component {
 
