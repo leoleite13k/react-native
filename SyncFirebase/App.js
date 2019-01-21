@@ -12,7 +12,7 @@ class SyncFirebase extends Component {
 
     constructor(props) {
         super(props);
-    
+
         this.state = {
             email:'',
             password:'',
@@ -47,9 +47,9 @@ class SyncFirebase extends Component {
     }
 
     register() {
-        if (this.state.email != '' && 
-            this.state.password != '' && 
-            this.state.avatar != null && 
+        if (this.state.email != '' &&
+            this.state.password != '' &&
+            this.state.avatar != null &&
             this.state.name != '') {
 
             firebase.auth().onAuthStateChanged((user) => {
@@ -63,7 +63,7 @@ class SyncFirebase extends Component {
             });
 
             firebase.auth().createUserWithEmailAndPassword(
-                this.state.email, 
+                this.state.email,
                 this.state.password)
             .catch((error) => {
                 alert(error.code);
@@ -98,7 +98,7 @@ class SyncFirebase extends Component {
             if (url.uri) {
                 let state = this.state;
                 state.avatar = {uri:url.uri};
-                this.setState(state); 
+                this.setState(state);
             }
         });
     }
@@ -146,17 +146,17 @@ class SyncFirebase extends Component {
                             <Text style={styles.texto}>
                                 {this.state.porcent}
                             </Text>
-                        </View>              
+                        </View>
                         <View style={styles.info}>
                             <TextInput style={styles.input} placeholder="Digite o nome" value={this.state.name} onChangeText={(name) => this.setState({name})}/>
                             <TextInput style={styles.input} placeholder="Digite o email" value={this.state.email} onChangeText={(email) => this.setState({email})}/>
                             <TextInput style={styles.input} secureTextEntry={true} placeholder="Digite a password" value={this.state.password} onChangeText={(password) => this.setState({password})}/>
-                        </View>        
+                        </View>
                     </View>
                     <Button title="Cadastrar" onPress={this.register} />
                 </View>
                 <View style={styles.lista}>
-                    <FlatList 
+                    <FlatList
                         data={this.state.lista}
                         renderItem={({item}) => <Lista data={item} />}
                     />
