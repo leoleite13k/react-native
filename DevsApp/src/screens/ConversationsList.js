@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, View, Image, Text } from 'react-native';
 import { connect } from 'react-redux';
+
 import { checkUser } from '../actions/ChatActions';
 
-class Conversations extends Component {
+class ConversationsList extends Component {
   constructor(props) {
       super(props);
 
@@ -12,11 +13,17 @@ class Conversations extends Component {
       };
   }
 
+  componentDidUpdate() {
+    if (this.props.activeChat != '') {
+      this.props.navigation.navigate('InternalConversation');
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.texto}>
-          Pagina de Conversa: Status - {this.props.status} - UID: {this.props.uid}
+          Página de Conversa
         </Text>
       </View>
     );
@@ -32,10 +39,11 @@ const styles = StyleSheet.create({
 const mapStateToProps = (state) => {
   return{
     status:state.auth.status,
-    uid:state.auth.uid
+    uid:state.auth.uid,
+    activeChat:state.chat.activeChat
   };
 };
 
-const ConversationsConnect = connect(mapStateToProps, { checkUser })(Conversations);
+const ConversationsListConnect = connect(mapStateToProps, { checkUser })(ConversationsList);
 
-export default ConversationsConnect;
+export default ConversationsListConnect;

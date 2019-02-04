@@ -117,3 +117,14 @@ export const login = (email, password) => {
     });
   };
 };
+
+export const logout = () => {
+  firebase.auth().signOut();
+
+  return {
+    type:'changeStatus',
+    payload:{
+      status:2
+    }
+  };
+}

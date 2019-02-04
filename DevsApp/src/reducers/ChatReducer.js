@@ -1,13 +1,19 @@
 const initialState ={
-  uid:0,
-  status:0
+  chats:[],
+  contacts:[],
+  activeChat:''
 };
 
 const ChatReducer = (state = initialState, action) => {
-  switch(action.state){
-    case 'checkUser':
+  switch(action.type){
+    case 'setContactList':
+      return {...state, contacts:action.payload.users};
+      break;
+    case 'setActiveChat':
+      return {...state, activeChat:action.payload.chatID};
       break;
   }
+
   return state;
 }
 
