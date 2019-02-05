@@ -6,10 +6,11 @@ import ContactList       from './ContactList';
 import Config            from './Config';
 
 const ConversationsNavigator = createBottomTabNavigator({
-  ConversationsList:{
+  ConversationsStack:{
     screen:ConversationsStack,
     navigationOptions:{
-      tabBarLabel:"Conversas"
+      tabBarLabel:"Conversas",
+      header:null
     }
   },
   ContactList:{

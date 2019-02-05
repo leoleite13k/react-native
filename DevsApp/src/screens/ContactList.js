@@ -19,6 +19,7 @@ class ContactList extends Component {
 
   openChat(item) {
     this.props.createChat(this.props.uid, item.key);
+    this.props.navigation.navigate('ConversationsStack');
   }
 
   render() {

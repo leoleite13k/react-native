@@ -37,63 +37,63 @@ export const createChat = (userUid, contactUid) => {
 
     //Structure users
     let chatId = newChat.key;
-    firebase.database().ref('users').child(userUid).child('chats').child(chatId).set({
-      id:chatId
+
+    firebase.database().ref('users').child(contactUid).once('value')
+    .then((snapshot) => {
+        let contactName = snapshot.val().name
+
+        firebase.database().ref('users').child(userUid).child('chats').child(chatId).set({
+          id:chatId,
+          nameChat:contactName
+        });
     });
-    firebase.database().ref('users').child(contactUid).child('chats').child(chatId).set({
-      id:chatId
-    });
+
+    firebase.database().ref('users').child(userUid).once('value')
+    .then((snapshot) => {
+        let userName = snapshot.val().name
+
+        firebase.database().ref('users').child(contactUid).child('chats').child(chatId).set({
+          id:chatId,
+          nameChat:userName
+        });
+      });
 
     dispatch({
       type:'setActiveChat',
       payload:{
         chatId:chatId
       }
-    })
+    });
   }
-};
+}
 
-/*
-export const login = (email, password) => {
-  return (dispatch) => {
-    firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((user) => {
-      let uid = firebase.auth().currentUser.uid;
+export const getChatList = (userUid) => {
+  return(dispatch) => {
+    firebase.database().ref('users').child(userUid).child('chats').on('value', (snapshot) => {
+      let chats =[];
+
+      snapshot.forEach((childItem) => {
+        chats.push({
+          key:childItem.key,
+          nameChat:childItem.val().nameChat
+        });
+      });
 
       dispatch({
-        type:'changeUID',
+        type:'setChatList',
         payload:{
-          uid:uid
+          chats:chats
         }
       });
-    })
-    .catch((error) => {
-      switch(error.code) {
-        case 'auth/invalid-email':
-          alert("Email Inválido !");
-          break;
-        case 'auth/user-disabled':
-          alert("Seu usuário está desativado !");
-          break;
-        case 'auth/user-not-found':
-          alert("Não existe este usuário !");
-          break;
-        case 'auth/wrong-password':
-          alert("Email ou Senha incorreta !");
-          break;
-      }
     });
-  };
-};
-*/
+  }
+}
 
-/*
-export const changeName = (name) => {
-  return{
-    type:'changeName',
+export const setActiveChat = (chatId) => {
+  return {
+    type:'setActiveChat',
     payload:{
-      name:name
+      chatId:chatId
     }
-  };
-};
-*/
+  }
+}

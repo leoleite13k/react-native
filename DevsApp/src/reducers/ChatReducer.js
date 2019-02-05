@@ -10,7 +10,10 @@ const ChatReducer = (state = initialState, action) => {
       return {...state, contacts:action.payload.users};
       break;
     case 'setActiveChat':
-      return {...state, activeChat:action.payload.chatID};
+      return {...state, activeChat:action.payload.chatId};
+      break;
+    case 'setChatList':
+      return { ...state, chats:action.payload.chats };
       break;
   }
 
