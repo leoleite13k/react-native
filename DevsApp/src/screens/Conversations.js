@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { createBottomTabNavigator, createNavigationContainer } from 'react-navigation';
 
 import ConversationsStack from './ConversationsStack';
-import ContactList       from './ContactList';
-import Config            from './Config';
+import ContactList        from './ContactList';
+import Config             from './Config';
 
 const ConversationsNavigator = createBottomTabNavigator({
   ConversationsStack:{
     screen:ConversationsStack,
     navigationOptions:{
       tabBarLabel:"Conversas",
-      header:null
+      header:null,
     }
   },
   ContactList:{
@@ -29,9 +29,20 @@ const ConversationsNavigator = createBottomTabNavigator({
 {
   defaultNavigationOptions:{
     animationsEnabled:false,
-    swipeEnabled:false
+    swipeEnabled:false,
   }
 });
+
+ConversationsStack.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true;
+
+  if (navigation.state.index > 0) {
+    tabBarVisible = false;
+  }
+  return {
+    tabBarVisible,
+  };
+};
 
 const ConversationsAppContainer = createNavigationContainer(ConversationsNavigator);
 

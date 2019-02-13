@@ -8,14 +8,11 @@ const ConversationsStackNavigator = createStackNavigator({
   ConversationsList:{
     screen:ConversationsList,
     navigationOptions:{
-      title:"Conversas"
+      title:"Conversas",
     }
   },
   InternalConversation:{
-    screen:InternalConversation,
-    navigationOptions:{
-      title:"Conversas"
-    }
+    screen:InternalConversation
   },
 });
 

@@ -1,7 +1,9 @@
 const initialState ={
   chats:[],
   contacts:[],
-  activeChat:''
+  activeChat:'',
+  nameChat:'',
+  activeMessagens:[]
 };
 
 const ChatReducer = (state = initialState, action) => {
@@ -10,10 +12,20 @@ const ChatReducer = (state = initialState, action) => {
       return {...state, contacts:action.payload.users};
       break;
     case 'setActiveChat':
-      return {...state, activeChat:action.payload.chatId};
+      let title:'';
+
+      for(var i in state.chats) {
+        if (state.chats[i].key == action.payload.chatId) {
+          title = state.chats[i].nameChat;
+        }
+      }
+      return {...state, activeChat:action.payload.chatId, nameChat:title};
       break;
     case 'setChatList':
       return { ...state, chats:action.payload.chats };
+      break;
+    case 'setActiveChatMessage':
+      return {...state, activeMessagens:action.payload.activeMessagens }
       break;
   }
 

@@ -3,12 +3,14 @@ import { Platform, StyleSheet, View, Image, Text, Button, TextInput, Keyboard } 
 import { connect } from 'react-redux';
 import { checkLogin, changeEmail, changePassword, login } from '../actions/AuthActions';
 
+import Load from '../components/Load';
+
 class SignIn extends Component {
   constructor(props) {
       super(props);
 
       this.state = {
-
+        loading:false
       };
   }
 
@@ -42,9 +44,13 @@ class SignIn extends Component {
         <Button
           title="Entrar"
           onPress={() => {
-            this.props.login(this.props.email, this.props.password);
+            this.setState({loading:true});
+            this.props.login(this.props.email, this.props.password, () => {
+              this.setState({loading:false});
+            });
           }}
         />
+        <Load visible={this.state.loading} />
       </View>
     );
   }

@@ -12,6 +12,7 @@ class Preload extends Component {
 
       };
 
+      window.globalNavigator = this.props.navigation;
       this.props.checkLogin();
       this.directPages = this.directPages.bind(this);
   }

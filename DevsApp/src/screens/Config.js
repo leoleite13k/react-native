@@ -19,8 +19,10 @@ class Config extends Component {
   logout() {
     this.props.logout();
 
+    //window.globalNavigator.navigate('Home');
     this.props.navigation.dispatch(StackActions.reset({
       index:0,
+      key:null,
       actions:[
         NavigationActions.navigate({routeName:'Home'})
       ]
@@ -30,14 +32,6 @@ class Config extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.texto}>
-          Nome
-        </Text>
-        <TextInput
-          style={styles.input}
-          value={this.props.name}
-          //onChangeText={this.props.changeName}
-        />
         <Button
           title="Sair"
           onPress={this.logout}
@@ -51,6 +45,7 @@ const styles = StyleSheet.create({
   container:{
     flex: 1,
     margin: 10,
+    marginTop: Platform.OS == 'ios'? 20 : 0,
   },
   title:{
     fontSize: 13,

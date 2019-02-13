@@ -3,12 +3,14 @@ import { Platform, StyleSheet, View, Image, TextInput, Button, Text, Keyboard } 
 import { connect } from 'react-redux';
 import { checkLogin, changeName, changeEmail, changePassword, register } from '../actions/AuthActions';
 
+import Load from '../components/Load';
+
 class SignUp extends Component {
   constructor(props) {
       super(props);
 
       this.state = {
-
+        loading:false
       };
   }
 
@@ -53,9 +55,13 @@ class SignUp extends Component {
         <Button
         title="Cadastrar"
         onPress={() => {
-          this.props.register(this.props.name, this.props.email, this.props.password)}
-        }
+          this.setState({loading:true});
+          this.props.register(this.props.name, this.props.email, this.props.password, () => {
+            this.setState({loading:false});
+          });
+        }}
         />
+        <Load visible={this.state.loading} />
       </View>
     );
   }

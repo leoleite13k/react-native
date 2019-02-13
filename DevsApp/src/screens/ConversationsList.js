@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, View, FlatList, Text } from 'react-native';
+import { Platform, StyleSheet, View, FlatList, Text, ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 import { getChatList, setActiveChat } from '../actions/ChatActions';
 
@@ -7,19 +7,24 @@ import List from '../components/ConversationsList/List';
 
 class ConversationsList extends Component {
   constructor(props) {
-      super(props);
+    super(props);
 
-      this.state = {
+    this.state = {
+      loading: true
+    };
 
-      };
+    this.openConversation = this.openConversation.bind(this);
+  }
 
-      this.props.getChatList( this.props.uid );
-      this.openConversation = this.openConversation.bind(this);
+  componentDidMount() {
+    this.props.getChatList( this.props.uid, () => {
+      this.setState({loading:false});
+    });
   }
 
   componentDidUpdate() {
     if (this.props.activeChat != '') {
-      this.props.navigation.navigate('InternalConversation');
+      this.props.navigation.navigate('InternalConversation',{nameChat:this.props.nameChat});
     }
   }
 
@@ -30,6 +35,7 @@ class ConversationsList extends Component {
   render() {
     return (
       <View style={styles.container}>
+        {this.state.loading && <ActivityIndicator size ="small" color="#512da8" />}
         <FlatList
           data={this.props.chats}
           renderItem={({item}) => <List data={item} onPress={this.openConversation} />}
@@ -50,7 +56,8 @@ const mapStateToProps = (state) => {
     status:state.auth.status,
     uid:state.auth.uid,
     activeChat:state.chat.activeChat,
-    chats:state.chat.chats
+    chats:state.chat.chats,
+    nameChat:state.chat.nameChat
   };
 };
 
